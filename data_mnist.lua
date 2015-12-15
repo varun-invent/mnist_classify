@@ -9,5 +9,12 @@ loaded_test = torch.load(test,'ascii')
 trsize = loaded_train.labels:size()[1]
 
 --image.display(loaded_train.data[{{1,25},{},{},{}}])
-print('this is ')
-print(loaded_train.labels[{{1,25}}])
+-- print('this is ')
+-- print(loaded_train.labels[{{1,25}}])
+
+trainData = { 
+	data = loaded_train.data,
+	labels = loaded_train.labels
+	}
+
+--print(trainData:size())
