@@ -28,6 +28,6 @@ end
 print('Here is the linear model:')
 print(model)
 
-print ('Visualization of weights')
-image.display(model:get(2).weight)  -- get(2) coz layer 1 is just reshaping of input and layer 2 actually transforms 1024->10
+-- print ('Visualization of weights')
+-- image.display(model:get(2).weight)  -- get(2) coz layer 1 is just reshaping of input and layer 2 actually transforms 1024->10
 

@@ -11,3 +11,5 @@ elseif loss == 'nll' then
 	criterion =  nn.ClassNLLCriterion()
 end
 
+print('Here is the loss function')
+print(criterion)
