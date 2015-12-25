@@ -12,17 +12,28 @@ ninputs = ndim*row*col
 
 nhidden = ninputs/2 -- for MLP only
 
+
+
+
 -- for covnets
 --nstates =  {ninputs,64,64,128}
 --filtsize = 5
 --poolsize = 2
 
-mod = 'linear'
 
-if mod == 'linear' then
+
+if opt.model == 'linear' then
 	model = nn.Sequential()
 	model:add(nn.Reshape(ninputs))
 	model:add(nn.Linear(ninputs,noutputs))
+
+elseif opt.model == 'mlp' then
+	model = nn.Sequential()
+	model:add(nn.Reshape(ninputs))
+	model:add(nn.Linear(ninputs,nhidden))
+	model:add(Tanh())
+	model:add(nn.Linear(nhidden,noutputs))
+	
 end
 
 print('Here is the linear model:')
